@@ -103,7 +103,7 @@ if ($tagExists) {
 docker container run -it -v ${PWD}:/app --rm yvonnick/gitmoji-changelog:latest update $newVersion
 
 # Commit the change
-git add git add --all
+git add --all
 git commit -m ":bookmark: Bump version to $newVersion"
 
 # Create a new Git tag
