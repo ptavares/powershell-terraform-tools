@@ -110,6 +110,6 @@ git commit -m ":bookmark: Bump version to $newVersion"
 git tag -a $newVersion -m ":bookmark: Version $newVersion"
 
 # Push changes to the remote repository
-git push origin master --tags
+git push origin main --tags
 
 Write-Output "ModuleVersion updated to $newVersion. Changes committed, tagged, and pushed."
