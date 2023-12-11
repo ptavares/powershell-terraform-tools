@@ -76,8 +76,8 @@ function Get-TerraformAliases {
 		$definition = if ($helpSynopsis -notcontains $_) { $helpSynopsis } else { $definition }
 
 		[PSCustomObject]@{
-			Name       = "    $esc[$($nameColor)m$name$esc[0m"
-			Definition = "    $esc[$($descriptionColor)m$definition$esc[0m"
+			Name       = " $esc[$($nameColor)m$name$esc[0m"
+			Definition = " $esc[$($descriptionColor)m$definition$esc[0m"
 		}
 	}
 
