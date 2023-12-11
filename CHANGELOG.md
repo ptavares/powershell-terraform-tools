@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="0.0.5"></a>
+## 0.0.5 (2023-12-11)
+
+### Fixed
+
+- ✏️ Update ReadMe [[ee24737](https://github.com/ptavares/powershell-terraform-tools/commit/ee24737e9da4a02f216d44237fbb0c8e9d866446)]
+
+
 <a name="0.0.4"></a>
 ## 0.0.4 (2023-12-11)
 
