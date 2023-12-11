@@ -80,36 +80,43 @@ New-Item -ItemType File $profile
 
 Here is the list of availabe aliases provides by this module :
 
-| Alias       | Command              |
-| ----------- | -------------------- |
-| `tf`        | `terraform`          |
-| `tff`       | `tf fmt`             |
-| `tfv`       | `tf validate`        |
-| `tfi`       | `tf init`            |
-| `tfp`       | `tf plan`            |
-| `tfa`       | `tf apply`           |
-| `tfd`       | `tf destroy`         |
-| `tfo`       | `tf output`          |
-| `tfr`       | `tf refresh`         |
-| `tfs`       | `tf show`            |
-| `tfw`       | `tf workspace`       |
-| `tffr`      | `tff -recursive`     |
-| `tfip`      | `tfi & tfp`          |
-| `tfia`      | `tfi & tfa`          |
-| `tfid`      | `tfi & tfd`          |
-| `tfa!`      | `tfa -auto-approve`  |
-| `tfia!`     | `tfi && tfa!`        |
-| `tfd!`      | `tfd -auto-approve`  |
-| `tfid!`     | `tfi && tfd!`        |
-| `tfversion` | `tf version`         |
+| Alias       | Command                                  |
+| ----------- | ---------------------------------------- |
+| `tf`        | `terraform`                              |
+| `tff`       | `tf fmt`                                 |
+| `tfv`       | `tf validate`                            |
+| `tfi`       | `tf init`                                |
+| `tfp`       | `tf plan`                                |
+| `tfa`       | `tf apply`                               |
+| `tfd`       | `tf destroy`                             |
+| `tfo`       | `tf output`                              |
+| `tfr`       | `tf refresh`                             |
+| `tfs`       | `tf show`                                |
+| `tfw`       | `tf workspace`                           |
+| `tffr`      | `tff -recursive`                         |
+| `tfip`      | `tfi & tfp`                              |
+| `tfia`      | `tfi & tfa`                              |
+| `tfid`      | `tfi & tfd`                              |
+| `tfa!`      | `tfa -auto-approve`                      |
+| `tfia!`     | `tfi && tfa!`                            |
+| `tfd!`      | `tfd -auto-approve`                      |
+| `tfid!`     | `tfi && tfd!`                            |
+| `tfversion` | `tf version`                             |
+| `tfws`      | `tfw select -or-create [workspace_name]` |
 
 ### Function
 
-`tfws [workspace_name]`
+```powershell
+# Show all aliases available in module
 
-Will execute command :
+Get-TerraformAliases
+```
 
-`tfw select -or-create [workspace_name]`
+```powershell
+# Show a specific alias available in module
+
+Get-TerraformAliases [alias_name]
+```
 
 ### Updating Terraform tools
 
