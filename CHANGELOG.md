@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="0.0.4"></a>
+## 0.0.4 (2023-12-11)
+
+### Changed
+
+- 🎨 reformat output [[a138872](https://github.com/ptavares/powershell-terraform-tools/commit/a138872e181d26adeddb56ee251d08e829031748)]
+
+
 <a name="0.0.3"></a>
 ## 0.0.3 (2023-12-11)
 
