@@ -1,6 +1,11 @@
 # PowerShell Terraform Tools
 
-[![license](https://img.shields.io/github/license/ptavares/powershell-terraform-tools.svg?style=flat-square)](./LICENSE)
+[![license](https://img.shields.io/github/license/ptavares/powershell-terraform-tools)](./LICENSE)
+
+![PowerShell Gallery Version (including pre-releases)](https://img.shields.io/powershellgallery/v/terraform-tools)
+
+![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/terraform-tools)
+
 
 ## Description 
 
