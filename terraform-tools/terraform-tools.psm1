@@ -33,31 +33,6 @@ $TF_SWITCHER_VERSION_FILE = Join-Path $env:TF_TOOLS_HOME "version_tfswitch.txt"
 # Install tools Functions
 # =========================================================
 
-function Write-ColorOutput {
-    [CmdletBinding()]
-    Param(
-        [Parameter(Mandatory = $False, Position = 1, ValueFromPipeline = $True, ValueFromPipelinebyPropertyName = $True)][Object] $Object,
-        [Parameter(Mandatory = $False, Position = 2, ValueFromPipeline = $True, ValueFromPipelinebyPropertyName = $True)][ConsoleColor] $ForegroundColor,
-        [Parameter(Mandatory = $False, Position = 3, ValueFromPipeline = $True, ValueFromPipelinebyPropertyName = $True)][ConsoleColor] $BackgroundColor,
-        [Switch]$NoNewline
-    )    
-
-
-    # Always write (if we want just a NewLine)
-    if ($Object -eq $null) {
-        $Object = ""
-    }
-
-    if ($NoNewline) {
-        [Console]::Write($Object)
-    }
-    else {
-        Write-Output $Object
-    }
-
-   
-}
-
 <#
 .SYNOPSIS
     Centralized Module Log.
