@@ -28,6 +28,16 @@ if ($versionBump -notin @('major', 'minor', 'patch')) {
     exit
 }
 
+# Get the status of the Git repository
+$gitStatus = git status --porcelain
+
+# Check if there are any changes to commit
+if ($gitStatus -ne "") {
+    Write-Output "There are uncommitted changes:"
+    Write-Output $gitStatus
+    exit 1
+}
+
 ###############################################################################
 # Check Code
 ###############################################################################
@@ -101,6 +111,12 @@ if ($tagExists) {
 
 # Create CHANGELOG.md
 docker container run -it -v ${PWD}:/app --rm yvonnick/gitmoji-changelog:latest update $newVersion
+
+# Check the exit code
+if ($LASTEXITCODE -ne 0) {
+    Write-Output "Error: The Docker command exited with code $LASTEXITCODE"
+    exit 1
+}
 
 # Commit the change
 git add --all
