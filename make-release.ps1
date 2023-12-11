@@ -32,7 +32,7 @@ if ($versionBump -notin @('major', 'minor', 'patch')) {
 $gitStatus = git status --porcelain
 
 # Check if there are any changes to commit
-if ($gitStatus -ne "") {
+if ($null -ne $gitStatus) {
     Write-Output "There are uncommitted changes:"
     Write-Output $gitStatus
     exit 1
