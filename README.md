@@ -1,21 +1,21 @@
 # PowerShell Terraform Tools
 
 [![license](https://img.shields.io/github/license/ptavares/powershell-terraform-tools)](./LICENSE)
-
 ![PowerShell Gallery Version (including pre-releases)](https://img.shields.io/powershellgallery/v/terraform-tools)
-
 ![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/terraform-tools)
 
 
 ## Description 
 
-A [PowerShell](https://microsoft.com/powershell) module for [Terraform](https://www.terraform.io/), a tool from [Hashicorp](https://www.hashicorp.com/) for managing infrastructure safely and efficiently.
+A [PowerShell](https://www.powershellgallery.com/packages/terraform-tools/) module for [Terraform](https://www.terraform.io/), a tool from [Hashicorp](https://www.hashicorp.com/) for managing infrastructure safely and efficiently.
 
-It will install the following [Terraform](https://www.terraform.io/) tools : 
+It will install the following [Terraform](https://www.terraform.io/) tools :
+- [terraform-switcher](https://github.com/warrensbox/terraform-switcher)
 - [terraform-docs](https://github.com/terraform-docs/terraform-docs)
 - [tfsec](https://github.com/aquasecurity/tfsec)
 - [tflint](https://github.com/terraform-linters/tflint)
 - [tfautomv](https://github.com/busser/tfautomv)
+
 
 It also provides some useful terraform aliases for everyday use.
 
@@ -23,10 +23,18 @@ It also provides some useful terraform aliases for everyday use.
 
 ## ⚙️ Installation
 
-Install from [PowerShell Gallery](https://www.powershellgallery.com/packages)
+Install or update from [PowerShell Gallery](https://www.powershellgallery.com/packages/terraform-tools/)
+
+- Install 
 
 ```powershell
 Install-Module terraform-tools -Scope CurrentUser -AllowClobber
+```
+
+- Update
+
+```powershell
+Install-Module terraform-tools -Scope CurrentUser -AllowClobber -Force
 ```
 
 Or from [Scoop](https://github.com/ScoopInstaller/Extras/blob/master/bucket/git-aliases.json)
@@ -67,6 +75,7 @@ Now you can use wanted tool or uses wanted [aliases](#aliases).
 tfswitch
 ```
 
+If you facing issue with current version of [tfswitch](https://github.com/warrensbox/terraform-switcher), have a look at my [fork](https://github.com/ptavares/terraform-switcher)
 
 ---
 
