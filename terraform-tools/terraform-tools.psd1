@@ -138,7 +138,7 @@ PrivateData = @{
         IconUri = 'https://github.com/ptavares/powershell-terraform-tools/terraform.svg'
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = 'https://github.com/ptavares/powershell-terraform-tools/blob/main/CHANGELOG.md'
 
         # Prerelease string of this module
         # Prerelease = ''
