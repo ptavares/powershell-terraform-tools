@@ -1,5 +1,33 @@
 # Changelog
 
+<a name="0.0.3"></a>
+## 0.0.3 (2023-12-11)
+
+### Added
+
+- ✨ add some checks before running release [[e9f718f](https://github.com/ptavares/powershell-terraform-tools/commit/e9f718f3d10ad147cf4972d4c37d497da0b64c03)]
+- ✨ add some checks before running release [[f249c1d](https://github.com/ptavares/powershell-terraform-tools/commit/f249c1db3f48f255add6724966911418c8ad9fef)]
+
+### Removed
+
+- 🔥 remove unused code [[3d28f33](https://github.com/ptavares/powershell-terraform-tools/commit/3d28f3303b0bfa42572945e1d5a5e045d8814c97)]
+
+### Fixed
+
+- ✏️ add changelog url [[bdbe7f8](https://github.com/ptavares/powershell-terraform-tools/commit/bdbe7f8efe7a7fb139bc63759f0a106d0acad0bd)]
+
+
+<a name="0.0.2"></a>
+## 0.0.2 (2023-12-11)
+
+### Fixed
+
+- 🐛 Resolve output color message [[9784387](https://github.com/ptavares/powershell-terraform-tools/commit/9784387e971536616bb7a989ba2e0ad178989adf)]
+- 🐛 Missing function to export [[1b691df](https://github.com/ptavares/powershell-terraform-tools/commit/1b691df5d1a4b834def10e1588db0b19f436a45e)]
+- ✏️ Update function section [[c8c3e2f](https://github.com/ptavares/powershell-terraform-tools/commit/c8c3e2fc459c3dda546028f1b0daecacc78d40e6)]
+- ✏️ Update badges [[0417aa6](https://github.com/ptavares/powershell-terraform-tools/commit/0417aa61eed53621b279c298c738f268e9afce1e)]
+
+
 <a name="0.0.1"></a>
 ## 0.0.1 (2023-12-10)
 
