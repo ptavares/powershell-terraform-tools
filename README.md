@@ -1,6 +1,6 @@
 # PowerShell Terraform Tools
 
-[![license](https://img.shields.io/github/license/ptavares/powershell-terraform-tools)](./LICENSE)
+![GitHub License](https://img.shields.io/github/license/ptavares/powershell-setup-terminal)
 ![PowerShell Gallery Version (including pre-releases)](https://img.shields.io/powershellgallery/v/terraform-tools)
 ![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/terraform-tools)
 
@@ -35,13 +35,6 @@ Install-Module terraform-tools -Scope CurrentUser -AllowClobber
 
 ```powershell
 Install-Module terraform-tools -Scope CurrentUser -AllowClobber -Force
-```
-
-Or from [Scoop](https://github.com/ScoopInstaller/Extras/blob/master/bucket/git-aliases.json)
-
-```powershell
-scoop bucket add extras
-scoop install terraform-tools
 ```
 
 ---
