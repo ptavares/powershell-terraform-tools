@@ -81,6 +81,11 @@ function Get-TerraformAliases {
 		}
 	}
 
+	$aliases = ,[PSCustomObject]@{
+		Name       = " $esc[$($nameColor)mtf$esc[0m"
+		Definition = " $esc[$($descriptionColor)mterraform$esc[0m"
+	} + $aliases
+
 	Write-Output ""
 	Write-Output "============================================="
 	Write-Output "=    Aliases from terraform-tools Module    ="
