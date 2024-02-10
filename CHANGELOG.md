@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="0.0.7"></a>
+## 0.0.7 (2024-02-10)
+
+### Fixed
+
+- 🐛 resolve terraform aliases [[e5eb99e](https://github.com/ptavares/powershell-terraform-tools/commit/e5eb99ec4fcd5f56a6f0d6b458cb6e7f3d264b07)]
+
+### Miscellaneous
+
+-  Merge pull request [#3](https://github.com/ptavares/powershell-terraform-tools/issues/3) from ptavares/bug/terraform_alias [[71bf987](https://github.com/ptavares/powershell-terraform-tools/commit/71bf987824ede3a988ccb12f64e999b8307437df)]
+
+
 <a name="0.0.6"></a>
 ## 0.0.6 (2023-12-17)
 
