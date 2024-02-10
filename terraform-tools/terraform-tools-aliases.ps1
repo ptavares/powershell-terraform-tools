@@ -4,7 +4,7 @@
 # Define all lower levels aliases
 # =========================================================
 
-function tf { terraform }
+Set-Alias -Name tf -Value terraform
 function tff { tf fmt }
 function tfv { tf validate }
 function tfi { tf init }
