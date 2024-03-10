@@ -4,15 +4,15 @@
 ![PowerShell Gallery Version (including pre-releases)](https://img.shields.io/powershellgallery/v/terraform-tools)
 ![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/terraform-tools)
 
-
-## Description 
+## Description
 
 A [PowerShell](https://www.powershellgallery.com/packages/terraform-tools/) module for [Terraform](https://www.terraform.io/), a tool from [Hashicorp](https://www.hashicorp.com/) for managing infrastructure safely and efficiently.
 
 It will install the following [Terraform](https://www.terraform.io/) tools :
+
 - [terraform-switcher](https://github.com/warrensbox/terraform-switcher)
 - [terraform-docs](https://github.com/terraform-docs/terraform-docs)
-- [tfsec](https://github.com/aquasecurity/tfsec)
+- [trivy](https://github.com/aquasecurity/trivy)
 - [tflint](https://github.com/terraform-linters/tflint)
 - [tfautomv](https://github.com/busser/tfautomv)
 
@@ -25,7 +25,7 @@ It also provides some useful terraform aliases for everyday use.
 
 Install or update from [PowerShell Gallery](https://www.powershellgallery.com/packages/terraform-tools/)
 
-- Install 
+- Install
 
 ```powershell
 Install-Module terraform-tools -Scope CurrentUser -AllowClobber
