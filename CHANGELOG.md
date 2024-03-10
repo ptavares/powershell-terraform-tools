@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="0.1.0"></a>
+## 0.1.0 (2024-03-10)
+
+### Breaking changes
+
+- 💥 switch tfsec to trivy [[6e5adc6](https://github.com/ptavares/powershell-terraform-tools/commit/6e5adc6952bf264759bae3f037655e8b433e1526)]
+
+### Miscellaneous
+
+-  Merge pull request [#4](https://github.com/ptavares/powershell-terraform-tools/issues/4) from ptavares/sparkles/switch_tfsec_to_trivy [[781c389](https://github.com/ptavares/powershell-terraform-tools/commit/781c38985b3b9bc06825ebd48b8fbf15e04c1dcb)]
+
+
 <a name="0.0.7"></a>
 ## 0.0.7 (2024-02-10)
 
