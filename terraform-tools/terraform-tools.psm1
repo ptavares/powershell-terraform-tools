@@ -10,7 +10,7 @@
 # =========================================================
 $API_GITUB = "https://api.github.com/repos"
 $TF_DOCS_RELEASE = "terraform-docs/terraform-docs/releases"
-$TF_SEC_RELEASE = "aquasecurity/tfsec/releases"
+$TF_TRIVY_RELEASE = "aquasecurity/trivy/releases"
 $TF_LINT_RELEASE = "terraform-linters/tflint/releases"
 $TF_AUTO_MV_RELEASE = "busser/tfautomv/releases"
 $TF_SWITCHER_RELEASE = "warrensbox/terraform-switcher/releases"
@@ -24,7 +24,7 @@ $env:TF_TOOLS_HOME = "$env:USERPROFILE\.terrafom-tools"
 # Define Module file to store tools version
 # =========================================================
 $TF_DOCS_VERSION_FILE = Join-Path $env:TF_TOOLS_HOME "version_tfdocs.txt"
-$TF_SEC_VERSION_FILE = Join-Path $env:TF_TOOLS_HOME "version_tfsec.txt"
+$TF_TRIVY_VERSION_FILE = Join-Path $env:TF_TOOLS_HOME "version_trivy.txt"
 $TF_LINT_VERSION_FILE = Join-Path $env:TF_TOOLS_HOME "version_tflint.txt"
 $TF_AUTO_MV_VERSION_FILE = Join-Path $env:TF_TOOLS_HOME "version_tfautomv.txt"
 $TF_SWITCHER_VERSION_FILE = Join-Path $env:TF_TOOLS_HOME "version_tfswitch.txt"
@@ -128,11 +128,19 @@ function Install-DownloadTerraformTools {
             Remove-Item "$DestDir\*.zip"
             $Version | Out-File $TF_DOCS_VERSION_FILE
         }
-        "tfsec" {
-            $url = "https://github.com/$TF_SEC_RELEASE/download/$Version/tfsec-checkgen-windows-$architecture.exe"
-            Invoke-RestMethod -Uri $url -OutFile "$DestDir\tfsec.exe"
-            Set-ItemProperty -Path "$DestDir\tfsec.exe" -Name IsReadOnly -Value $false
-            $Version | Out-File $TF_SEC_VERSION_FILE
+        "trivy" {
+            if ($architecture -eq "amd64") {
+                $architecture = "64bit"
+            }
+            else {
+                $architecture = "32bit"
+            }
+            $SimpleVersion = $Version.Substring(1) + "_windows"
+            $url = "https://github.com/$TF_TRIVY_RELEASE/download/$Version/trivy_$SimpleVersion-$architecture.zip"
+            Invoke-RestMethod -Uri $url -OutFile "$DestDir\tmp.zip"
+            Expand-Archive -Path "$DestDir\tmp.zip"-DestinationPath $DestDir -Force | Out-Null
+            Remove-Item "$DestDir\*.zip"
+            $Version | Out-File $TF_TRIVY_VERSION_FILE
         }
         "tflint" {
             $url = "https://github.com/$TF_LINT_RELEASE/download/$Version/tflint_windows_$architecture.zip"
@@ -213,8 +221,8 @@ function Install-TerraformTools {
 
     # Install tfdocs
     Install-TerraformTool "tfdocs" $TF_DOCS_RELEASE
-    # Install tfsec
-    Install-TerraformTool "tfsec" $TF_SEC_RELEASE
+    # Install trivy
+    Install-TerraformTool "trivy" $TF_TRIVY_RELEASE
     # Install tflint
     Install-TerraformTool "tflint" $TF_LINT_RELEASE
     # Install tfautomv
@@ -282,8 +290,8 @@ function Update-TerraformTools {
 
     # Update tfdocs
     Update-TerraformTool -ToolName "tfdocs" -ReleaseFile $TF_DOCS_VERSION_FILE -ReleaseURL $TF_DOCS_RELEASE
-    # Update tfsec
-    Update-TerraformTool -ToolName "tfsec" -ReleaseFile $TF_SEC_VERSION_FILE -ReleaseURL $TF_SEC_RELEASE
+    # Update trivy
+    Update-TerraformTool -ToolName "trivy" -ReleaseFile $TF_TRIVY_VERSION_FILE -ReleaseURL $TF_TRIVY_RELEASE
     # Update tflint
     Update-TerraformTool -ToolName "tflint" -ReleaseFile $TF_LINT_VERSION_FILE -ReleaseURL $TF_LINT_RELEASE
     # Update tfautomv
@@ -314,7 +322,7 @@ function TerraformToolsLoads {
     Write-TerraformToolLog "Blue" "Expanding user PATH with tools..."
     # Export PATH
     TerraformToolsAddToPath "$env:TF_TOOLS_HOME\tfdocs"
-    TerraformToolsAddToPath "$env:TF_TOOLS_HOME\tfsec"
+    TerraformToolsAddToPath "$env:TF_TOOLS_HOME\trivy"
     TerraformToolsAddToPath "$env:TF_TOOLS_HOME\tflint"
     TerraformToolsAddToPath "$env:TF_TOOLS_HOME\tfautomv"
     TerraformToolsAddToPath "$env:TF_TOOLS_HOME\tfswitch"
